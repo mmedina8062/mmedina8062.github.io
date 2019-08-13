@@ -1,0 +1,19 @@
+
+body{
+	background-color: yellow;
+}
+h1{
+	color: blue;
+}
+.boldClass{
+	font-weight: bold;
+}
+#bigID{
+	font-size: 24px;
+}
+<body>
+	<h1> Hello World!</h1>
+	<h3 id="bigID"> My name is Mee.</h3>
+	<br>
+	<center> <p class="boldclass"> I <strong> love
+	
