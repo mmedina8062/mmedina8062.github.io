@@ -2,13 +2,8 @@
 body{
 	background-image: url("images/autumn.jpg");
 }
-h1{
-	color: #ffff00;
-	font-family: mv boli;
-	font-size: 30px
-}
 p{
-	color: #ffff00;
+	color: white;
 	font-family: segoe Print;
 	font-size: 25px
 
@@ -35,4 +30,11 @@ li a {
 
 li a:hover {
   background-color: #300;
+}
+
+.profilepic-medium {
+	height: 443px;
+}
+img {
+	border-radius: 50%
 }

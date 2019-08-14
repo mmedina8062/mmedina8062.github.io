@@ -8,8 +8,13 @@ h1{
 	font-size: 30px
 }
 p{
+	color: black
 	font-family: segoe Print;
 	font-size: 25px
+}
+p{
+	color: white;
+	font-size: 10px
 }
 ul {
   list-style-type: none;
