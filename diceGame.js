@@ -5,8 +5,9 @@ function startGame(){         //master function
 	let twelveSidedResult = doTwelveSidedTurn(); 
 	let twentySidedResult = doTwentySidedTurn(); 
 	let sixSidedResult = doSixSidedTurn(); 
-	let tenSidedResult = doTenSidedTurnClueRoll(); 
-	let eightSidedResult = doEightSidedTurn(); 
+	let tenSidedResult = doTenSidedTurnDescriptionClueDie(); 
+	let eightSidedResult = doEightSidedTurnWeaponUsedClueDie();
+	let endGameResult = solveTheMysteryWhoseTheKiller(); 
 	return; 
 }
 
@@ -34,7 +35,7 @@ function doTwelveSidedTurn() {
 }
 
 function doTwentySidedTurn(){
-	let twentySidedDie = ['spot 1', 'spot 2', 'spot 3', 'spot 4', 'spot 5', 'spot 6', 'spot 7', 'spot 8', 'spot 9', 'spot 10', 'spot 11', 'spot 12', 'spot 13', 'spot 14', 'spot 15', 'spot 16', 'spot 17', 'spot 18', 'spot 19', 'spot 20'];
+	let twentySidedDie = ['spot 1: "roll eightSidedDie"', 'spot 2: "roll tenSidedDie"', 'spot 3: "roll eightSidedDie"', 'spot 4: "roll tenSidedDie"', 'spot 5: "roll eightSidedDie"', 'spot 6: "roll tenSidedDie"', 'spot 7: "roll eightSidedDie"', 'spot 8: "roll tenSidedDie"', 'spot 9: "roll eightSidedDie"', 'spot 10: "roll tenSidedDie"', 'spot 11: "roll eightSidedDie"', 'spot 12: "roll tenSidedDie"', 'spot 13: "roll eightSidedDie"', 'spot 14: "roll tenSidedDie"', 'spot 15: "roll eightSidedDie"', 'spot 16: "roll tenSidedDie"', 'spot 17: "roll eightSidedDie"', 'spot 18: "roll tenSidedDie"', 'spot 19: "roll eightSidedDie"', 'spot 20: "roll tenSidedDie"'];
 	let roll = rollDie(20) - 1;
 	let result = twentySidedDie[roll];
 	console.log("move to " + result);
@@ -50,12 +51,34 @@ function doSixSidedTurn(){
 	return result;
 }
 
-function doTenSidedTurnClueRoll(){
-	let tenSidedDie = ['purple shirt ', 'black boots ', 'black jean pants ', 'brown hair ', 'grey eyes ', '' ];
+function doTenSidedTurnDescriptionClueDie(){
+	let tenSidedDie = ['purple T-shirt', 'size 12 black boots', 'black jean pants', 'short brown hair', 'grey eyes', "height 6'5", 'spider tattoo on left wrist', 'goatee beard', 'left earring', 'male'];
+	let roll = rollDie(10) - 1;
+	let result = tenSidedDie[roll];
+	console.log(result);
+	return result;
 }
 
-function doEightSidedTurn(){
-	let eightSidedDie = [""];
+function doEightSidedTurnWeaponUsedClueDie(){
+	let eightSidedDie = ['metal', 'brown wooden handle', '20 inches long', 'razor sharp', 'red tassle', 'wide blade', 'lion symbol', 'curved'];
+	let roll = rollDie(8) - 1;
+	let result = eightSidedDie[roll];
+	console.log(result);
+	return result;
+}
+
+function solveTheMysteryWhoseTheKiller(){
+	let killerOptions = ["A. Male, 6'5, red hair, black shoes, dark navy pants, green eyes, violet shirt, beard", "B. "]
+	let playerAnswer = prompt("Type in your option: Choose wisely...");
+	let correctKiller = killerOptions[3];
+	if(correctKiller === 3){
+		console.log("YOU'RE A HERO!!! YOU CAUGHT THE KILLER");
+		else if{
+			console.log("WOMP, WOMP, WOMP...LOSER!!!! YOU GOT CAUGHT AND KILLED");
+		}
+	}
+	let result = correctKiller;
+	return result;
 }
 
 startGame();
