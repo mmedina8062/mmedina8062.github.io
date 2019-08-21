@@ -52,7 +52,7 @@ function doSixSidedTurn(){
 }
 
 function doTenSidedTurnDescriptionClueDie(){
-	let tenSidedDie = ['purple T-shirt', 'size 12 black boots', 'black jean pants', 'short brown hair', 'grey eyes', "height 6'5", 'spider tattoo on left wrist', 'goatee beard', 'left earring', 'male'];
+	let tenSidedDie = ['purple T-shirt', 'size 12 black boots', 'black jean pants', 'short brown hair', 'gray eyes', "height 6'5", 'spider tattoo on left wrist', 'goatee beard', 'left earring', 'male'];
 	let roll = rollDie(10) - 1;
 	let result = tenSidedDie[roll];
 	console.log(result);
@@ -60,7 +60,7 @@ function doTenSidedTurnDescriptionClueDie(){
 }
 
 function doEightSidedTurnWeaponUsedClueDie(){
-	let eightSidedDie = ['metal', 'brown wooden handle', '20 inches long', 'razor sharp', 'red tassle', 'wide blade', 'lion symbol', 'curved'];
+	let eightSidedDie = ['metal', 'brown wooden handle', '15 inches long', 'razor sharp', 'red tassle', 'wide blade', 'lion symbol', 'curved'];
 	let roll = rollDie(8) - 1;
 	let result = eightSidedDie[roll];
 	console.log(result);
@@ -68,17 +68,26 @@ function doEightSidedTurnWeaponUsedClueDie(){
 }
 
 function solveTheMysteryWhoseTheKiller(){
-	let killerOptions = ["A. Male, 6'5, red hair, black shoes, dark navy pants, green eyes, violet shirt, beard", "B. "]
-	let playerAnswer = prompt("Type in your option: Choose wisely...");
-	let correctKiller = killerOptions[3];
-	if(correctKiller === 3){
-		console.log("YOU'RE A HERO!!! YOU CAUGHT THE KILLER");
-		else if{
-			console.log("WOMP, WOMP, WOMP...LOSER!!!! YOU GOT CAUGHT AND KILLED");
-		}
+	let weaponChoice = ["A. Machete", "B. Butcher knife", "C. Sword", "D. Gun", "E. Tire rod"];
+	let playerWeaponChoiceAnswer = prompt("Type in which weapon the killer use");
+	if(playerWeaponChoiceAnswer === 0){
+		console.log("You got it");
 	}
-	let result = correctKiller;
-	return result;
+	else{
+		console.log("Too bad that's the wrong answer");
+	}
+	let correctWeapon = weaponChoice[0];
+	
+	let killerOptions = ["A. Male 6'5, red hair, black shoes, dark navy pants, green eyes, violet shirt, beard, size 12 brown shoes", "B. male, 6'5, long brown hair, gray eyes, purple collar shirt, size 12 black boots", "c. male, 6'7, short brown hair, blue eyes, goatee beard, earrings both ears", "D. male, 6'5, gray eyes, short brown hair, goatee, left earring, spider tattoo left wrist"];
+	let playerKillerPersonAnswer = prompt("Type in your option: Choose wisely...");
+	if(playerKillerPersonAnswer === 3){
+		console.log("YOU'RE A HERO!!! YOU CAUGHT THE KILLER");
+	}
+	else{
+		console.log("WOMP, WOMP, WOMP...LOSER!!!! YOU GOT CAUGHT AND KILLED");
+	}
+	let correctKiller = killerOptions[3];
+	
 }
 
 startGame();
