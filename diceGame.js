@@ -1,10 +1,15 @@
 
 function startGame(){         //master function
 	let displayName = prompt("Player1 please enter your name");
-	let fourSidedResult = doFourSidedTurn(); 
-	let twelveSidedResult = doTwelveSidedTurn(); 
-	let twentySidedResult = doTwentySidedTurn(); 
-	let sixSidedResult = doSixSidedTurn(); 
+	let twelveSidedResult = doTwelveSidedTurn();
+	let fourSidedResult = doFourSidedTurn();
+	if(fourSidedResult){
+		let twentySidedResult = doTwentySidedTurn();
+	}
+	else{ 
+		let sixSidedResult = doSixSidedTurn(); 
+	}
+
 	let tenSidedResult = doTenSidedTurnDescriptionClueDie(); 
 	let eightSidedResult = doEightSidedTurnWeaponUsedClueDie();
 	let endGameResult = solveTheMysteryWhoseTheKiller(); 
@@ -18,20 +23,20 @@ function rollDie(numberOfSides) {     //create a generic "rollDie" so that you c
 	return die;
 }
 
+function doTwelveSidedTurn() {
+	let twelveSidedDie = ['OUCH!! You only have 20 secs', '25 secs', '30 secs', '35 secs', '40 secs', '45 secs', '50 secs', '55 secs', '60 secs', '65 secs', '70 secs', '75 secs'];
+	let roll = rollDie(12) - 1;
+	let result = twelveSidedDie[roll];
+	console.log("You have" + " " + result + " " + "to answer your draw card, roll the fourSidedDie");
+	return result;
+}
+
 function doFourSidedTurn() {
 	let fourSidedDie = ['I Spy deck', 'Mystery Riddle deck', 'Action deck', 'Pictionary deck'];
 	let roll = rollDie(4) - 1;
 	let result = fourSidedDie[roll];
 	console.log("Draw from " + result);
-	return result;
-}
-
-function doTwelveSidedTurn() {
-	let twelveSidedDie = ['OUCH!! You only have 20 secs', '25 secs', '30 secs', '35 secs', '40 secs', '45 secs', '50 secs', '55 secs', '60 secs', '65 secs', '70 secs', '75 secs'];
-	let roll = rollDie(12) - 1;
-	let result = twelveSidedDie[roll];
-	console.log("You have" + " " + result + " " + "(if answered correctly within time roll 20 sided die, if NOT roll 6 sided die)");
-	return result;
+	return true;
 }
 
 function doTwentySidedTurn(){
@@ -70,17 +75,17 @@ function doEightSidedTurnWeaponUsedClueDie(){
 function solveTheMysteryWhoseTheKiller(){
 	let weaponChoice = ["A. Machete", "B. Butcher knife", "C. Sword", "D. Gun", "E. Tire rod"];
 	let playerWeaponChoiceAnswer = prompt("Type in which weapon the killer use");
-	if(playerWeaponChoiceAnswer === 0){
+	if(playerWeaponChoiceAnswer == 0){
 		console.log("You got it");
 	}
 	else{
 		console.log("Too bad that's the wrong answer");
 	}
 	let correctWeapon = weaponChoice[0];
-	
+
 	let killerOptions = ["A. Male 6'5, red hair, black shoes, dark navy pants, green eyes, violet shirt, beard, size 12 brown shoes", "B. male, 6'5, long brown hair, gray eyes, purple collar shirt, size 12 black boots", "c. male, 6'7, short brown hair, blue eyes, goatee beard, earrings both ears", "D. male, 6'5, gray eyes, short brown hair, goatee, left earring, spider tattoo left wrist"];
 	let playerKillerPersonAnswer = prompt("Type in your option: Choose wisely...");
-	if(playerKillerPersonAnswer === 3){
+	if(playerKillerPersonAnswer == 3){  //leave as a string 
 		console.log("YOU'RE A HERO!!! YOU CAUGHT THE KILLER");
 	}
 	else{
