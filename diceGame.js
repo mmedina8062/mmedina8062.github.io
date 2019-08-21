@@ -3,8 +3,8 @@ function startGame(){         //master function
 	let displayName = prompt("Player1 please enter your name");
 	let twelveSidedResult = doTwelveSidedTurn();
 	let fourSidedResult = doFourSidedTurn();
-	if(fourSidedResult){
-		let twentySidedResult = doTwentySidedTurn();
+	if(fourSidedResult = true){
+		let twentySidedResult = doTwentySidedTurn(); //=true
 	}
 	else{ 
 		let sixSidedResult = doSixSidedTurn(); 
